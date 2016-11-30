@@ -45,6 +45,9 @@ public class Ending : MonoBehaviour {
 		private GameObject MladyBad;
 		private Button BadEndingButton;
 
+        private GameObject GoodEnding;
+        private GameObject BadEnding;
+
 		//Assings the class variables to the correct gameobjects at the start of the scene
 		void Start() {
 
@@ -83,6 +86,9 @@ public class Ending : MonoBehaviour {
 
 			MladyBad = GameObject.Find("MladyBad");
 			BadEndingButton = GameObject.Find("BadEndingButton").GetComponent<Button>();
+
+            GoodEnding = GameObject.Find("GoodEnding");
+            BadEnding = GameObject.Find("BadEnding");
 
 			//First story window choices
 			Strength.onClick.AddListener (() => traitSelected ("Strength"));
@@ -160,7 +166,7 @@ public class Ending : MonoBehaviour {
 
 		} */
 
-		//Continues the story onward
+		//Continues the story onward based on players choices
 		private void continueStory(int window) {
 
 			int switchValue = window;
@@ -209,16 +215,31 @@ public class Ending : MonoBehaviour {
 
 				disableAllWindows ();
 
+                    GoodEnding.SetActive(true);
+
+                    Invoke("theEnd", 10);
+
 				break;
 
 			case 6:
 
 				disableAllWindows ();
 
+                    BadEnding.SetActive(true);
+
+                    Invoke("theEnd", 10);
+
 				break;
 
 			}
 		}
+
+        //Loads the main menu after the ending
+        private void theEnd() {
+
+            SceneManager.LoadScene(1);
+
+        }
 
 
 
@@ -351,6 +372,18 @@ public class Ending : MonoBehaviour {
 				MladyBad.SetActive (false);
 
 			}
+
+            if(GoodEnding.activeSelf) {
+
+                GoodEnding.SetActive(false);
+
+            }
+
+            if(BadEnding.activeSelf) {
+
+                BadEnding.SetActive(false);
+
+            }
 
 		}
 

@@ -118,5 +118,15 @@ public class InventoryHandler : MonoBehaviour {
 			return roseUsed;
 		
 		}
+
+        public static void resetInventory() {
+
+            roseUsed = false;
+
+            potionAmount = 3;
+
+            potionsUsed = false;
+
+        }
     }
 }

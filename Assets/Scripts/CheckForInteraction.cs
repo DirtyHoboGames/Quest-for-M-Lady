@@ -80,9 +80,7 @@ namespace Assets.Scripts {
 
 				dialog.text = DialogScript.getDialog (int.Parse (colli.gameObject.name));
 
-				/*}else if (colli.CompareTag("Wench")) {
-                dialog.text = DialogScript.getDialog(int.Parse(colli.gameObject.name));
-                */
+
 			} else if (colli.CompareTag ("HiddenHoboCoin") == true) {
 
 				Debug.Log ("Oh look, a HoboCoin !");
@@ -96,6 +94,8 @@ namespace Assets.Scripts {
 			} else if (colli.CompareTag ("YellowKnight") == true) {
 
 				if (YellowKnightToggle.activeSelf == false) {
+
+                    toggleFathers();
 					
 					YellowKnightToggle.SetActive (true);
 				}
@@ -104,6 +104,8 @@ namespace Assets.Scripts {
 			} else if (colli.CompareTag ("BlueKnight") == true) {
 
 				if (BlueKnightToggle.activeSelf == false) {
+
+                    toggleFathers();
 					
 					BlueKnightToggle.SetActive (true);
 				}
@@ -112,11 +114,15 @@ namespace Assets.Scripts {
 			} else if (colli.CompareTag ("BloodyKnight") == true) {
 				
 				if (BloodyKnightToggle.activeSelf == false) {
+
+                    toggleFathers();
 					
 					BloodyKnightToggle.SetActive (true);
 				}
 
 			} else {
+
+                toggleFathers();
 
 				dialog.text = DialogScript.getNullDialog ();
 
@@ -148,7 +154,9 @@ namespace Assets.Scripts {
 
 				StatKeeper.SelectFather ("Charisma");
 
-				int temp = SceneManager.GetActiveScene().buildIndex; 
+				int temp = SceneManager.GetActiveScene().buildIndex;
+
+                toggleFathers();
 
 				SceneManager.LoadScene(temp + 1);
 
@@ -158,7 +166,9 @@ namespace Assets.Scripts {
 
 				StatKeeper.SelectFather ("Luck");
 
-				int temp = SceneManager.GetActiveScene().buildIndex; 
+				int temp = SceneManager.GetActiveScene().buildIndex;
+
+                toggleFathers();
 
 				SceneManager.LoadScene(temp + 1);
 			
@@ -168,7 +178,9 @@ namespace Assets.Scripts {
 
 				StatKeeper.SelectFather ("Strength");
 
-				int temp = SceneManager.GetActiveScene().buildIndex; 
+				int temp = SceneManager.GetActiveScene().buildIndex;
+
+                toggleFathers();
 
 				SceneManager.LoadScene(temp + 1);
 

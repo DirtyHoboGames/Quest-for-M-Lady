@@ -61,6 +61,21 @@ namespace Assets.Scripts {
 
         }
 
+
+        /// <summary>
+        /// Reset the stats
+        /// </summary>
+        public static void ResetStats() {
+
+            setStats(10, 0, 0, 0, 0);
+
+            selectedFather = "";
+
+            resetHoboCoin();
+
+        }
+
+
 		/// <summary>
 		/// Collects the hobo coin.
 		/// </summary>
@@ -73,6 +88,7 @@ namespace Assets.Scripts {
 
         }
 
+
 		/// <summary>
 		/// Gets the coin amount.
 		/// </summary>
@@ -84,6 +100,7 @@ namespace Assets.Scripts {
 
         }
 
+
 		/// <summary>
 		/// Gets the health.
 		/// </summary>
@@ -94,6 +111,7 @@ namespace Assets.Scripts {
             return Health;
 
         }
+
 
 		/// <summary>
 		/// Gets the player's stats.
@@ -121,6 +139,7 @@ namespace Assets.Scripts {
 
 		}
 
+
 		/// <summary>
 		/// Gets the player's strength.
 		/// </summary>
@@ -130,6 +149,7 @@ namespace Assets.Scripts {
 			return Strength;
 
 		}
+
 
 		/// <summary>
 		/// Gets the player's charisma.
@@ -141,6 +161,7 @@ namespace Assets.Scripts {
 
 		}
 
+
 		/// <summary>
 		/// Gets the player's luck.
 		/// </summary>
@@ -151,6 +172,11 @@ namespace Assets.Scripts {
 
 		}
 
+
+        /// <summary>
+        /// returns the father that the player chose
+        /// </summary>
+        /// <returns></returns>
 		public static string getFather() {
 		
 			Debug.Log ("Father is " + selectedFather);
@@ -160,6 +186,12 @@ namespace Assets.Scripts {
 		
 		}
 
+
+
+        /// <summary>
+        /// Saves the father selection that happens in the childhood scene
+        /// </summary>
+        /// <param name="father"></param>
 		public static void SelectFather(string father) {
 		
 			selectedFather = father;
