@@ -98,7 +98,6 @@ public class InventoryHandler : MonoBehaviour {
         public void useRose() {
 
             roseUsed = true;
-            Debug.Log("Rose used... U gonna regret it m8");
             Rose.SetActive(false);
 
         }

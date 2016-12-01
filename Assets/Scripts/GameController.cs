@@ -9,12 +9,12 @@ using UnityEngine.SceneManagement;
 namespace Assets.Scripts {
     public class GameController : MonoBehaviour {
 
+		bool playerDed = false;
+
         public static GameController instance= null;
         private GameObject Player;
         private GameObject playerStats;
 
-        private Button ContinueButton;
-        private Button QuitButton;
         private Button menuButton;
         private Button mapButton;
         private Button bagButton;
@@ -32,8 +32,12 @@ namespace Assets.Scripts {
         private GameObject Bag;
         private GameObject DialogToggle;
         private GameObject Menu;
-        private GameObject GameOver;
 		private GameObject StoryWindow;
+
+		//These objects are in the ''Game Over'' screen
+		private GameObject GameOver;
+		private Button ContinueButton;
+		private Button QuitButton;
 
         private int frames = 0;
 
@@ -63,20 +67,34 @@ namespace Assets.Scripts {
             Stats = GameObject.Find("ShowStats");
             statsButton = GameObject.Find("ButtonStats").GetComponent<Button>();
             statsText = GameObject.Find("Stats").GetComponent<Text>();
-            DialogToggle = GameObject.Find("ShowDialog");                                                        //This object(ShowDialog) controls the dialog box
-            dialogText = GameObject.Find("ShowDialog").GetComponent<Text>();                                    //This is the dialog box's text
-            Interact = GameObject.Find("Player/Interact");
-            menuButton = GameObject.Find("ButtonMenu").GetComponent<Button>();
+
+			//This object(ShowDialog) controls the dialog box
+            DialogToggle = GameObject.Find("ShowDialog");                                                        
+            
+			//This is the dialog box's text
+			dialogText = GameObject.Find("ShowDialog").GetComponent<Text>();                                    
+            
+			//The interaction trigger spawned by the Enter button
+			Interact = GameObject.Find("Player/Interact");
+            
+			//Objects for the "Pause menu"
+			menuButton = GameObject.Find("ButtonMenu").GetComponent<Button>();
             menuPlayButton = GameObject.Find("ShowMenu/ResumeButton").GetComponent<Button>();
             menuQuitButton = GameObject.Find("ShowMenu/QuitButton").GetComponent<Button>();               
-            Menu = GameObject.Find("ShowMenu");                                                                 //this object toggles the pause menu
-            QuitButton = GameObject.Find("GameOverScreen/QuitButton").GetComponent<Button>();
+            
+			//this object toggles the pause menu
+			Menu = GameObject.Find("ShowMenu");                                                                 
+            
+			//Sets the functionality into the "game over" screen objects
+			ContinueButton = GameObject.Find ("GameOverScreen/ContinueButton").GetComponent<Button> ();
+			QuitButton = GameObject.Find("GameOverScreen/QuitButton").GetComponent<Button>();
             GameOver = GameObject.Find("GameOverScreen");
 
 
 			if (SceneManager.GetActiveScene ().name.Equals ("Childhood room 1") || SceneManager.GetActiveScene().name.Equals("Sleeping Chambers") || SceneManager.GetActiveScene().name.Equals("Dungeon Level")) {
 				StoryWindow = GameObject.Find ("StoryWindow");
 				hideStoryWindow = GameObject.Find ("StoryWindow/ContinueButton").GetComponent<Button> ();
+
 
 				hideStoryWindow.onClick.AddListener (() => hideStory ());
 			}
@@ -92,8 +110,9 @@ namespace Assets.Scripts {
             menuPlayButton.onClick.AddListener(() => resumeGame());
 			menuQuitButton.onClick.AddListener(() => quitGame());                //When you click "Quit to menu" button on the pause menu it returns you to the Title Menu
 
-            //ContinueButton.onClick.AddListener(() => ContinueGame());                //Continues game from Wench's House upstairs
-            QuitButton.onClick.AddListener(() => quitToMainMenu());                    //Same thing here as in the pause menu^
+            ContinueButton.onClick.AddListener(() => ContinueGame());                //Continues game from Wench's House upstairs
+
+			QuitButton.onClick.AddListener(() => quitToMainMenu());                    //Same thing here as in the pause menu^
 
 
             preventUIOverlap();
@@ -106,32 +125,45 @@ namespace Assets.Scripts {
         //Updates stats every 20th frame
         void Update() {
 			
-            //DELETE BEFORE RELEASE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
-            if (StatKeeper.getHealth() <= 0) {//888888888888888888888888888888888888888888888888888888888888888888888888888
-                StatKeeper.healPlayer();//!111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
-            }//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			/*//DELETE BEFORE RELEASE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+			if (StatKeeper.getHealth () <= 0) {//888888888888888888888888888888888888888888888888888888888888888888888888888
+				StatKeeper.healPlayer ();//!111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+			}!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
-            frames++;
-            if (frames % 20 == 0) { //If the remainder of the current frame divided by 20 is 0 run the function.
-                UpdateStats();
+			frames++;
 
-                if(StatKeeper.getHealth() <= 0) {
+			if (frames % 60 == 0) { //If the remainder of the current frame divided by 60 is 0 run the function.
 
-                    Debug.Log("Player Died !");
+				UpdateStats ();
 
-                    Time.timeScale = 0f;
+				if (StatKeeper.getHealth () <= 0) {
 
-                    preventUIOverlap();
+					Debug.Log ("Player Died !");
 
-                    GameOver.SetActive(true);
 
-                }
-            }
+					if (!playerDed) {
 
-        }
+						
+						preventUIOverlap ();
+
+						GameOver.SetActive (true);
+
+						DialogToggle.SetActive (false);
+
+						playerDed = true;
+
+						StatKeeper.healPlayer();
+
+
+					}
+
+				}
+
+			}
+		}
 
 		//Unfreezes the time and returns the player to main menu
-		void quitGame() {
+		public void quitGame() {
 
 			Time.timeScale = 1f;
 			SceneManager.LoadScene (1);
@@ -146,13 +178,16 @@ namespace Assets.Scripts {
 		}
 
         //Continues the game and revives the player
-        private void ContinueGame() {
+        public void ContinueGame() {
 
-            Debug.Log("clicked");
+			StatKeeper.healPlayer();
 
-            StatKeeper.healPlayer();
+            Debug.Log("Continuing game from the checkpoint");
 
-            SceneManager.LoadScene(3);
+			StatKeeper.resetHoboCoin ();
+			InventoryHandler.resetInventory (); 
+
+			SceneManager.LoadScene (3);
 
         }
 
