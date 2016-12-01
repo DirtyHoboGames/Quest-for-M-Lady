@@ -13,6 +13,7 @@ public class WenchLineofSight : MonoBehaviour {
     private Button NoButton;
 	private bool wenchFlipped = true;
 	private bool coRoutineStarted = true;
+    private bool roseGiven = false;
 
 	//This is the players position when the scene first loads
 	private Vector2 entrance = new Vector2(-36.205f, -8.083f);
@@ -43,6 +44,7 @@ public class WenchLineofSight : MonoBehaviour {
     void YesButtonClicked() {
         hideStory();
         InventoryHandler.GiveRose();
+        roseGiven = true;
     }
     IEnumerator flipWench() {
 
@@ -74,7 +76,7 @@ public class WenchLineofSight : MonoBehaviour {
 	/// </summary>
 	/// <param name="coll">Coll.</param>
     void OnTriggerEnter2D(Collider2D coll) {
-        if (coll.CompareTag("Playa")) { //if player hits the collider, time freezes and dialogue follows.
+        if (coll.CompareTag("Playa") && roseGiven == false) { //if player hits the collider, time freezes and dialogue follows.
             
             showStory();
             Debug.Log("lel");

@@ -6,6 +6,8 @@ using System.Collections;
 namespace Assets.Scripts {
 public class KillPlayerOnTouch : MonoBehaviour {
 
+        public AudioClip scream;
+
 		private GameObject Player;
 
 		Vector2 entrance = new Vector2(0.113f, -0.29f);
@@ -19,8 +21,10 @@ public class KillPlayerOnTouch : MonoBehaviour {
 		void OnTriggerEnter2D(Collider2D colli) {
 		
 			if (colli.CompareTag ("Playa")) {
-			
-				StatKeeper.receiveDamage (4);
+
+                SoundManager.instance.musicSource.PlayOneShot(scream, 1.0f);
+
+                StatKeeper.receiveDamage (4);
 
 				Player.transform.position = entrance;
 			
