@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-
-// Displays the players health on the top-right corner of the screen. Gets the health from the StatKeeper class using getHealthAmount() method. Updates every frame.
 using System;
 
+// Displays the players health on the top-right corner of the screen. Gets the health from the StatKeeper class using getHealthAmount() method. Updates every frame.
 
 namespace Assets.Scripts {
 public class HealthDisplay : MonoBehaviour {

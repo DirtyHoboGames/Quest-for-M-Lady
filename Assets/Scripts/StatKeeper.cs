@@ -39,7 +39,12 @@ namespace Assets.Scripts {
             Luck = lck;
 
         }
-
+        //Returns the amount of hobo coins as string.
+        public static string getHobos() {
+            string temp = HoboCoinsCollected.ToString();
+            return temp;
+        }
+        //Returns the amount of health as string.
 		public static string getHealthAmount() {
 		
 			string temp = Health.ToString ();
@@ -147,7 +152,7 @@ namespace Assets.Scripts {
 
 		}
 
-
+        
 		/// <summary>
 		/// Gets the player's strength.
 		/// </summary>
