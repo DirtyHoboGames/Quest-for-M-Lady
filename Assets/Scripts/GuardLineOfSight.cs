@@ -22,7 +22,7 @@ public class GuardLineOfSight : MonoBehaviour { //Script for guards to detect pl
 
     void OnTriggerEnter2D(Collider2D coll) { //guard collider checks for player and deals damage, says some stuff, invokes checkstatus method.
         if (coll.CompareTag("Playa")) {
-            StatKeeper.receiveDamage(4);
+            //StatKeeper.receiveDamage(4);
             dialog.text = DialogScript.getDialog(14);
             spotted = true;
         }
