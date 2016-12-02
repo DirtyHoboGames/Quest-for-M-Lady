@@ -302,6 +302,8 @@ namespace Assets.Scripts {
 
             statsText.text = StatKeeper.getStats();
 
+
+
         }
 
 

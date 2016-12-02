@@ -40,6 +40,14 @@ namespace Assets.Scripts {
 
         }
 
+		public static string getHealthAmount() {
+		
+			string temp = Health.ToString ();
+
+			return temp;
+		
+		}
+
 		/// <summary>
 		/// Damages the player's Health
 		/// </summary>
