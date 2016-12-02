@@ -12,7 +12,7 @@ namespace Assets.Scripts {
         private Animator animator;
         private bool flipPlayer = true;
         private Rigidbody2D body;
-        public int velocityMultiplier;
+        public float velocityMultiplier;
           
         // Use this for initialization
         void Start() {
