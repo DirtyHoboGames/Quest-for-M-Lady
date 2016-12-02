@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 25d108f3615823a47ba674112695d07b
-timeCreated: 1477385465
+timeCreated: 1480721285
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -146,7 +146,7 @@ TextureImporter:
     21300278: hyptosis_tile-art-batch-4_139
     21300280: hyptosis_tile-art-batch-4_140
     21300282: hyptosis_tile-art-batch-4_141
-    21300284: hyptosis_tile-art-batch-4_142
+    21300284: 1alaosa
     21300286: hyptosis_tile-art-batch-4_143
     21300288: hyptosis_tile-art-batch-4_144
     21300290: hyptosis_tile-art-batch-4_145
@@ -2312,13 +2312,13 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: hyptosis_tile-art-batch-4_142
+      name: 1alaosa
       rect:
         serializedVersion: 2
         x: 288
-        y: 608
-        width: 32
-        height: 32
+        y: 576
+        width: 31
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
