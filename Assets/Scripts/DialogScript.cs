@@ -1,15 +1,11 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-
-
-//Stores the NPC dialogs which will show up in the dialogbox of the UI. contains methods for getting the dialogs and also getting an empty dialog, which is for resetting the dialogbox
-//if the player presses enter and there are no interactable objects near him
+    //Stores the NPC dialogs which will show up in the dialogbox of the UI. contains methods for getting the dialogs and also getting an empty dialog, which is for resetting the dialogbox
+    //if the player presses enter and there are no interactable objects near him
 namespace Assets.Scripts {
     public class DialogScript {
 
         private static List<string> dialogs = new List<string>();
-        
 
         public static void DialogInit() {
 
@@ -50,30 +46,20 @@ namespace Assets.Scripts {
             dialogs.Add("Guard: \r\n	A n'rmal day h're isn't t citizen?");
         
             dialogs.Add("Guard: \r\n	I did see a frog this m'rning and t wast fabulous. ");
-
-
         }
-
-		//returns the correct dialog based on NPC's name, which acts a index for the "dialogs" list
+        //returns the correct dialog based on NPC's name, which acts a index for the "dialogs" list
         public static string getDialog (int lel) {
 
             if(dialogs.Count > lel) {
             return dialogs[lel];
-
         } else {
-
             return "not found";
-
         }
     }
 		//returns empty dialog to clear the dialog box when you aren't near anything/anyone
 		public static string getNullDialog() {
 
 			return "";
-
-		}
-
-
-
-	}
+        }
+    }
 }
