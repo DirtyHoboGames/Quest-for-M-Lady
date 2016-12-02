@@ -29,7 +29,7 @@ namespace Assets.Scripts {
             dialogs.Add("Alas off thee dim-witt'd coyote !");
 
             //Wench 6-7
-            dialogs.Add("Wench \r\n   Oh? sweet roses.i'll alloweth t slideth.");
+            dialogs.Add("Wench \r\n   Oh? sweet rose.i'll alloweth t slideth.");
             dialogs.Add("Wench \r\n   Geth lost garbage or thy will faceth certain death!");
 
             //M' Lady 8
@@ -39,7 +39,7 @@ namespace Assets.Scripts {
             dialogs.Add("Guard: \r\n	I hath used to beest an adventur'r liketh thee, but then i tooketh an arrow to the ham. ");
             dialogs.Add("Guard: \r\n	Grise aside, citizen");
         
-            dialogs.Add("Guard: \r\n	Greetings, travell’r");
+            dialogs.Add("Guard: \r\n	Thee shant not pass!");
         
             dialogs.Add("Guard: \r\n	Receiveth hath lost, dog. ");
         
