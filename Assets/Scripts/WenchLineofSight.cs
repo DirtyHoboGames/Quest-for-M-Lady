@@ -14,6 +14,7 @@ public class WenchLineofSight : MonoBehaviour {
 	private bool wenchFlipped = true;
 	private bool coRoutineStarted = true;
     private bool roseGiven = false;
+	private Collider2D boxCollider;
 
 	//This is the players position when the scene first loads
 	private Vector2 entrance = new Vector2(-36.205f, -8.083f);
@@ -30,6 +31,10 @@ public class WenchLineofSight : MonoBehaviour {
         NoButton.onClick.AddListener(() => NoButtonClicked());
         WenchStoryWindow.SetActive(false);
 
+		dialog = GameObject.Find ("ShowDialog/DialogBox").GetComponent<Text> ();
+
+		boxCollider = GameObject.Find ("Wench").GetComponent<BoxCollider2D> ();
+
 		//Finds the player object
 		player = GameObject.Find ("Player");
 
@@ -45,6 +50,12 @@ public class WenchLineofSight : MonoBehaviour {
         hideStory();
         InventoryHandler.GiveRose();
         roseGiven = true;
+
+		boxCollider.enabled = false;
+
+		dialog.text = DialogScript.getDialog(6);
+
+
     }
     IEnumerator flipWench() {
 

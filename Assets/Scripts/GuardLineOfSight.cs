@@ -16,7 +16,6 @@ public class GuardLineOfSight : MonoBehaviour { //Script for guards to detect pl
     void Start() {
 
 		player = GameObject.Find ("Player");
-        DialogScript.DialogInit();
         dialog = GameObject.Find("ShowDialog/DialogBox").GetComponent<Text>();
     }
 

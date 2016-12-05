@@ -7,7 +7,7 @@ namespace Assets.Scripts {
 
         private static List<string> dialogs = new List<string>();
 
-        public static void DialogInit() {
+        static DialogScript() {
 
 
             //M' Lady 0-2
@@ -16,7 +16,7 @@ namespace Assets.Scripts {
             dialogs.Add("M' Lady \r\n   Nice to meeteth thee !. I am new at this nurs'ry and t is at each moment nice to meeteth new people. ");
             
             //Kindergarten nurse 3
-			dialogs.Add("Well seeth again tom'rrow dram one ! Hie to thy fath'r anon.");
+			dialogs.Add("Nanny: \r\n\tWell seeth again tom'rrow dram one ! Hie to thy fath'r anon.");
 
             //other kid 4
             dialogs.Add("Doth not disturb me");
@@ -25,8 +25,8 @@ namespace Assets.Scripts {
             dialogs.Add("Alas off thee dim-witt'd coyote !");
 
             //Wench 6-7
-            dialogs.Add("Wench \r\n   Oh? sweet rose.i'll alloweth t slideth.");
-            dialogs.Add("Wench \r\n   Geth lost garbage or thy will faceth certain death!");
+            dialogs.Add("Wench: \r\n   Oh? sweet rose.i'll alloweth to slideth.");
+            dialogs.Add("Wench: \r\n   Geth lost garbage or thy will faceth certain death!");
 
             //M' Lady 8
 			dialogs.Add("Holla th're !");
@@ -47,7 +47,7 @@ namespace Assets.Scripts {
         
             dialogs.Add("Guard: \r\n	I did see a frog this m'rning and t wast fabulous. ");
 
-			// Doggo 17- 
+			// Doggo 17-24 
 
 			dialogs.Add ("Doggo:\r\n\tWoof !");
 			dialogs.Add ("Doggo:\r\n\tThe French Revolution (French: Révolution française [ʁevɔlysjɔ̃ fʁɑ̃sɛːz]) was a period of far-reaching social and political upheaval in France that lasted from 1789 until 1799, and was partially carried forward by Napoleon during the later expansion of the French Empire. The Revolution overthrew the monarchy, established a republic, experienced violent periods of political turmoil, and finally culminated in a... dictatorship under Napoleon.");
@@ -57,7 +57,8 @@ namespace Assets.Scripts {
 			dialogs.Add ("Doggo:\r\n\tOooooooh I’m so scared, you think you’re tough pussy? I’m behind 7 proxies and use ZoneAlarm, Sygate and Comodo Internetnet Securtiy which I all keep up-to-date. THAT’S THREE FIREWALLS AT THE SAME TIME motherfucker. You can’t hack me you little piece of shit. You’re peeshooter and kung fu won’t make a difference when my friend who’s a B-51 pilot in the Air ...\tForce... can turn your entire house and backyard into a fuckhuge bomb crater. You are pathetic, while you’re sitting there writing insults like the sad little nerd you are i’m having sex with my hot girlfriends. Yeah you read that right, i have not one but FIVE girlfriends. Top that motherfucker, I dont think you’ve ever even held hands with a girl.");
 			dialogs.Add ("Doggo:\r\n\tNewton's laws of motion are three physical laws that, together, laid the foundation for classical mechanics. They describe the relationship between a body and the forces acting upon it, and its motion in response to those forces. They have been expressed in several different ways, over nearly three centuries, and can be summarised as follows. First law: In an inertial reference frame, an object either remains at rest or continues... to move at a constant velocity, unless acted upon by a net force.[2][3] Second law: In an inertial reference frame, the vector sum of the forces F on an object is equal to the mass m of that object multiplied by the acceleration a of the object: F = ma. Third law: When one body exerts a force on a second body, the second body simultaneously exerts a force equal in magnitude and opposite in direction on the first body.");
 			dialogs.Add ("Doggo:\r\n\tLooking for the last coin, eh ? Here you go !");
-		
+
+
 		}
         //returns the correct dialog based on NPC's name, which acts a index for the "dialogs" list
         public static string getDialog (int lel) {

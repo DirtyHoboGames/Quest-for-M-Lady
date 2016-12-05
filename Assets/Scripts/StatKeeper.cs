@@ -1,15 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 /// <summary>
 /// Stat keeper.
 /// 
 /// Keeps all of the player's stats and health
 /// </summary>
+
+
+
 namespace Assets.Scripts {
-    public static class StatKeeper {
+    public class StatKeeper {
 
 		static string selectedFather = "";
+
+		static int discoveredDoggos;
+
+		static int HoboCoinsCollected;
 
         static int Health;
         static int Charisma;
@@ -17,7 +25,23 @@ namespace Assets.Scripts {
         static int Intelligence;
         static int Luck;
 
-        static int HoboCoinsCollected;
+		static Dictionary<int,bool> doggos = new Dictionary<int,bool> ();
+
+		/// <summary>
+		/// executes at the start of this instance.
+		/// </summary>
+
+		static StatKeeper() {
+		
+			doggos.Add (17, false);
+			doggos.Add (18, false);
+			doggos.Add (19, false);
+			doggos.Add (20, false);
+			doggos.Add (21, false);
+			doggos.Add (22, false);
+			doggos.Add (23, false);
+		
+		}
 
 		/// <summary>
 		/// Sets the stats.
@@ -44,10 +68,51 @@ namespace Assets.Scripts {
             string temp = HoboCoinsCollected.ToString();
             return temp;
         }
+
         //Returns the amount of health as string.
 		public static string getHealthAmount() {
 		
 			string temp = Health.ToString ();
+
+			return temp;
+		
+		}
+
+		/// <summary>
+		/// Doggos the discovered = checks if the doggo is already discovered, otherwise sets it as discovered and updates discoveredDoggos integer.
+		/// </summary>
+		/// <param name="doggonumber">Doggonumber.</param>
+		public static void DoggoDiscovered(int doggonumber) {
+
+			if (doggos [doggonumber]) {
+				Debug.Log ("Already found this Doggo !");
+			} else {
+
+				markAsFound (doggonumber);
+
+				discoveredDoggos++;
+
+				Debug.Log ("Doggos found: " + discoveredDoggos);
+			}
+		}
+
+		/// <summary>
+		/// Marks the correct Doggo as found.
+		/// </summary>
+		/// <param name="doggo">Doggo.</param>
+		private static void markAsFound(int doggo) {
+		
+			doggos [doggo] = true;
+		
+		}
+
+		/// <summary>
+		/// Gets the doggos.
+		/// </summary>
+		/// <returns>The doggos.</returns>
+		public static string getDoggos() {
+		
+			string temp = discoveredDoggos.ToString ();
 
 			return temp;
 		

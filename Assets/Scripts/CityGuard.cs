@@ -16,7 +16,6 @@ public class CityGuard : MonoBehaviour {
     void Start() {
 
         player = GameObject.Find("Player");
-        DialogScript.DialogInit();
         dialog = GameObject.Find("ShowDialog/DialogBox").GetComponent<Text>();
     }
     //player touches the trigger and get thrown back. Guards say mean things.

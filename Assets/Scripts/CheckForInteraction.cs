@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 //If there is, it gets the dialog from the dialog script according to the NPC index 
 //It also includes functionality for finding hidden hobocoins in the walls, crates etc..
 //Also controls the childhood scene's father selection.
+using System;
 
 namespace Assets.Scripts {
 	
@@ -37,7 +38,6 @@ namespace Assets.Scripts {
 
 		void Awake() {
 
-            DialogScript.DialogInit();
 
             dialog = GameObject.Find("ShowDialog/DialogBox").GetComponent<Text>();
             
@@ -80,7 +80,7 @@ namespace Assets.Scripts {
 
 				dialog.text = DialogScript.getDialog (int.Parse (colli.gameObject.name));
 
-
+				StatKeeper.DoggoDiscovered (int.Parse(colli.gameObject.name));
 
 			}
 

@@ -115,7 +115,6 @@ namespace Assets.Scripts {
 
 			QuitButton.onClick.AddListener(() => quitToMainMenu());                    //Same thing here as in the pause menu^
 
-
             preventUIOverlap();
 
             cancelInteracting();

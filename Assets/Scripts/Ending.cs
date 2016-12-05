@@ -48,6 +48,11 @@ public class Ending : MonoBehaviour {
         private GameObject GoodEnding;
         private GameObject BadEnding;
 
+		private GameObject StatsWindow;
+		private Button BackToMainMenu;
+		private Text Doggos;
+		private Text HoboCoins;
+
 		//Assings the class variables to the correct gameobjects at the start of the scene
 		void Start() {
 
@@ -90,6 +95,11 @@ public class Ending : MonoBehaviour {
             GoodEnding = GameObject.Find("GoodEnding");
             BadEnding = GameObject.Find("BadEnding");
 
+			StatsWindow = GameObject.Find ("StatsWindow");
+			BackToMainMenu = GameObject.Find ("StatsWindow/BackToMainMenu").GetComponent<Button> ();
+			Doggos = GameObject.Find ("StatsWindow/Doggos").GetComponent<Text> ();
+			HoboCoins = GameObject.Find ("StatsWindow/HoboCoins").GetComponent<Text> ();
+
 			//First story window choices
 			Strength.onClick.AddListener (() => traitSelected ("Strength"));
 			Luck.onClick.AddListener (() => traitSelected ("Luck"));
@@ -114,6 +124,8 @@ public class Ending : MonoBehaviour {
 			GoodEndingButton.onClick.AddListener (() => continueStory (5));
 
 			BadEndingButton.onClick.AddListener (() => continueStory (6));
+
+			BackToMainMenu.onClick.AddListener (() => theEnd ());
 
 			disableAllWindows ();
 
@@ -217,7 +229,7 @@ public class Ending : MonoBehaviour {
 
                     GoodEnding.SetActive(true);
 
-                    Invoke("theEnd", 10);
+                    Invoke("displayStats", 10);
 
 				break;
 
@@ -227,7 +239,7 @@ public class Ending : MonoBehaviour {
 
                     BadEnding.SetActive(true);
 
-                    Invoke("theEnd", 10);
+                    Invoke("displayStats", 10);
 
 				break;
 
@@ -240,6 +252,16 @@ public class Ending : MonoBehaviour {
             SceneManager.LoadScene(1);
 
         }
+
+		//Displays the endgame statistics about collected HoboCoins and discovered Doggos.
+		private void displayStats() {
+
+			disableAllWindows ();
+			StatsWindow.SetActive (true);
+			Doggos.text = StatKeeper.getDoggos() + " / 6";
+			HoboCoins.text = StatKeeper.getHobos() + " / ???";
+
+		}
 
 
 
@@ -384,6 +406,12 @@ public class Ending : MonoBehaviour {
                 BadEnding.SetActive(false);
 
             }
+
+			if (StatsWindow.activeSelf) {
+			
+				StatsWindow.SetActive (false);
+			
+			}
 
 		}
 
