@@ -31,7 +31,7 @@ namespace Assets.Scripts {
             //M' Lady 8
 			dialogs.Add("Holla th're !");
 
-            //guard(s) 9 - infinitii
+            //guard(s) 9 - 16
             dialogs.Add("Guard: \r\n	I hath used to beest an adventur'r liketh thee, but then i tooketh an arrow to the ham. ");
             dialogs.Add("Guard: \r\n	Grise aside, citizen");
         
@@ -46,7 +46,19 @@ namespace Assets.Scripts {
             dialogs.Add("Guard: \r\n	A n'rmal day h're isn't t citizen?");
         
             dialogs.Add("Guard: \r\n	I did see a frog this m'rning and t wast fabulous. ");
-        }
+
+			// Doggo 17- 
+
+			dialogs.Add ("Doggo:\r\n\tWoof !");
+			dialogs.Add ("Doggo:\r\n\tThe French Revolution (French: Révolution française [ʁevɔlysjɔ̃ fʁɑ̃sɛːz]) was a period of far-reaching social and political upheaval in France that lasted from 1789 until 1799, and was partially carried forward by Napoleon during the later expansion of the French Empire. The Revolution overthrew the monarchy, established a republic, experienced violent periods of political turmoil, and finally culminated in a... dictatorship under Napoleon.");
+			dialogs.Add ("Doggo:\r\n\tThe M60 is a belt-fed machine gun that fires the 7.62×51mm NATO cartridge (.308 Winchester) commonly used in larger rifles. It is generally used as a crew-served weapon and operated by a team of two or three individuals. The team consists of the gunner, the assistant gunner (AG in military slang), and the ammunition bearer. The gun's weight and the amount of ammunition it can consume when fired make...\t\t it difficult for a single soldier to carry and operate. The gunner carries the weapon and, depending on his strength and stamina, anywhere from 200 to 1000 rounds of ammunition. The assistant carries a spare barrel and extra ammunition, and reloads and spots targets for the gunner. The ammunition bearer carries additional ammunition and the tripod with associated traversing and elevation mechanism, if issued, and fetches more ammunition as needed during firing.");
+			dialogs.Add ("Doggo:\r\n\tA man escaped from a German prison by hiding in a cardboard box, which was then taken outside of the prison by courier.");
+			dialogs.Add ("Doggo:\r\n\tI once hid in that haywagon, but you didn't hear it from me");
+			dialogs.Add ("Doggo:\r\n\tOooooooh I’m so scared, you think you’re tough pussy? I’m behind 7 proxies and use ZoneAlarm, Sygate and Comodo Internetnet Securtiy which I all keep up-to-date. THAT’S THREE FIREWALLS AT THE SAME TIME motherfucker. You can’t hack me you little piece of shit. You’re peeshooter and kung fu won’t make a difference when my friend who’s a B-51 pilot in the Air ...\tForce... can turn your entire house and backyard into a fuckhuge bomb crater. You are pathetic, while you’re sitting there writing insults like the sad little nerd you are i’m having sex with my hot girlfriends. Yeah you read that right, i have not one but FIVE girlfriends. Top that motherfucker, I dont think you’ve ever even held hands with a girl.");
+			dialogs.Add ("Doggo:\r\n\tNewton's laws of motion are three physical laws that, together, laid the foundation for classical mechanics. They describe the relationship between a body and the forces acting upon it, and its motion in response to those forces. They have been expressed in several different ways, over nearly three centuries, and can be summarised as follows. First law: In an inertial reference frame, an object either remains at rest or continues... to move at a constant velocity, unless acted upon by a net force.[2][3] Second law: In an inertial reference frame, the vector sum of the forces F on an object is equal to the mass m of that object multiplied by the acceleration a of the object: F = ma. Third law: When one body exerts a force on a second body, the second body simultaneously exerts a force equal in magnitude and opposite in direction on the first body.");
+			dialogs.Add ("Doggo:\r\n\tLooking for the last coin, eh ? Here you go !");
+		
+		}
         //returns the correct dialog based on NPC's name, which acts a index for the "dialogs" list
         public static string getDialog (int lel) {
 
