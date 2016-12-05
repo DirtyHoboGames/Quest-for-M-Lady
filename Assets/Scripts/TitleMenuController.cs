@@ -9,9 +9,11 @@ namespace Assets.Scripts {
         private Button PlayButton;
         private Button AboutButton;
         private Button QuitButton;
+        private Button HelpButton;
 
         private GameObject ImageToggle;
         private GameObject AboutToggle;
+        private GameObject HelpToggle;
 
         void Start() {
 
@@ -25,15 +27,19 @@ namespace Assets.Scripts {
             PlayButton = GameObject.Find("Play").GetComponent<Button>(); 
             AboutButton = GameObject.Find("About").GetComponent<Button>();
             QuitButton = GameObject.Find("Quit").GetComponent<Button>();
+            HelpButton = GameObject.Find("Help").GetComponent<Button>();
 
             AboutToggle = GameObject.Find("AboutToggle");
             ImageToggle = GameObject.Find("ImageToggle");
+            HelpToggle = GameObject.Find("HelpToggle");
 
             PlayButton.onClick.AddListener(() => startGame());
             AboutButton.onClick.AddListener(() => toggleAbout());
             QuitButton.onClick.AddListener(() => Application.Quit());
+            HelpButton.onClick.AddListener(() => toggleHelp());
 
             AboutToggle.SetActive(false);
+            HelpToggle.SetActive(false);
 
         }
 
@@ -56,6 +62,23 @@ namespace Assets.Scripts {
 
                 ImageToggle.SetActive(false);
                 AboutToggle.SetActive(true);
+
+            }
+
+        }
+
+        void toggleHelp() {
+
+            if (HelpToggle.activeSelf == true) {
+
+                ImageToggle.SetActive(true);
+                HelpToggle.SetActive(false);
+
+
+            } else {
+
+                ImageToggle.SetActive(false);
+                HelpToggle.SetActive(true);
 
             }
 
