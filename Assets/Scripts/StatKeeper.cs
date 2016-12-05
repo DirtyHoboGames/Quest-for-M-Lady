@@ -133,14 +133,12 @@ namespace Assets.Scripts {
         //Collects all of the stats into a string, which is displayed in the stats window on UI
         public static string getStats() {
 
-            string temp = "" +
+			string temp = "" +
 
-                            "Health   " + Health + "\r\n\r\n" +
-                            "Strength   " + Strength + "\r\n" +
-                            "Charisma   " + Charisma + "\r\n" +
-                            "Intelligence   " + Intelligence + "\r\n" +
-                            "Luck   " + Luck + "\r\n" +
-                            "HoboCoins found    " + HoboCoinsCollected;
+			                       "Strength   " + Strength + "\r\n" +
+			                       "Charisma   " + Charisma + "\r\n" +
+			                       "Intelligence   " + Intelligence + "\r\n" +
+			                       "Luck   " + Luck;
 
             return temp;
 
