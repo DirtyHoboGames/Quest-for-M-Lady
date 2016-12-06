@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 25d108f3615823a47ba674112695d07b
-timeCreated: 1480721285
+timeCreated: 1481026017
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -176,17 +176,17 @@ TextureImporter:
     21300338: hyptosis_tile-art-batch-4_169
     21300340: hyptosis_tile-art-batch-4_170
     21300342: hyptosis_tile-art-batch-4_171
-    21300344: hyptosis_tile-art-batch-4_172
+    21300344: 1haarniska2
     21300346: hyptosis_tile-art-batch-4_173
-    21300348: hyptosis_tile-art-batch-4_174
-    21300350: hyptosis_tile-art-batch-4_175
+    21300348: 1miekat
+    21300350: 1miekka
     21300352: hyptosis_tile-art-batch-4_176
     21300354: hyptosis_tile-art-batch-4_177
-    21300356: hyptosis_tile-art-batch-4_178
+    21300356: 1miekka2
     21300358: hyptosis_tile-art-batch-4_179
-    21300360: hyptosis_tile-art-batch-4_180
+    21300360: 1reuna2
     21300362: hyptosis_tile-art-batch-4_181
-    21300364: hyptosis_tile-art-batch-4_182
+    21300364: 1reuna
     21300366: hyptosis_tile-art-batch-4_183
     21300368: hyptosis_tile-art-batch-4_184
     21300370: hyptosis_tile-art-batch-4_185
@@ -195,11 +195,11 @@ TextureImporter:
     21300376: hyptosis_tile-art-batch-4_188
     21300378: hyptosis_tile-art-batch-4_189
     21300380: hyptosis_tile-art-batch-4_190
-    21300382: hyptosis_tile-art-batch-4_191
+    21300382: 1haarniska
     21300384: hyptosis_tile-art-batch-4_192
     21300386: hyptosis_tile-art-batch-4_193
     21300388: hyptosis_tile-art-batch-4_194
-    21300390: hyptosis_tile-art-batch-4_195
+    21300390: 1reuna3
     21300392: hyptosis_tile-art-batch-4_196
     21300394: hyptosis_tile-art-batch-4_197
     21300396: hyptosis_tile-art-batch-4_198
@@ -232,7 +232,7 @@ TextureImporter:
     21300450: hyptosis_tile-art-batch-4_225
     21300452: hyptosis_tile-art-batch-4_226
     21300454: hyptosis_tile-art-batch-4_227
-    21300456: hyptosis_tile-art-batch-4_228
+    21300456: 1putki
     21300458: hyptosis_tile-art-batch-4_229
     21300460: hyptosis_tile-art-batch-4_230
     21300462: hyptosis_tile-art-batch-4_231
@@ -334,8 +334,8 @@ TextureImporter:
     21300654: hyptosis_tile-art-batch-4_327
     21300656: hyptosis_tile-art-batch-4_328
     21300658: hyptosis_tile-art-batch-4_329
-    21300660: hyptosis_tile-art-batch-4_330
-    21300662: hyptosis_tile-art-batch-4_331
+    21300660: 1miekka3
+    21300662: 1haarniska3
     21300664: hyptosis_tile-art-batch-4_332
     21300666: hyptosis_tile-art-batch-4_333
     21300668: hyptosis_tile-art-batch-4_334
@@ -375,7 +375,7 @@ TextureImporter:
     21300736: hyptosis_tile-art-batch-4_368
     21300738: hyptosis_tile-art-batch-4_369
     21300740: hyptosis_tile-art-batch-4_370
-    21300742: hyptosis_tile-art-batch-4_371
+    21300742: 1smelt
     21300744: hyptosis_tile-art-batch-4_372
     21300746: hyptosis_tile-art-batch-4_373
     21300748: hyptosis_tile-art-batch-4_374
@@ -397,8 +397,8 @@ TextureImporter:
     21300780: hyptosis_tile-art-batch-4_390
     21300782: hyptosis_tile-art-batch-4_391
     21300784: hyptosis_tile-art-batch-4_392
-    21300786: hyptosis_tile-art-batch-4_393
-    21300788: hyptosis_tile-art-batch-4_394
+    21300786: 1kori
+    21300788: 1kori2
     21300790: hyptosis_tile-art-batch-4_395
     21300792: hyptosis_tile-art-batch-4_396
     21300794: hyptosis_tile-art-batch-4_397
@@ -417,6 +417,7 @@ TextureImporter:
     21300820: hyptosis_tile-art-batch-4_410
     21300822: hyptosis_tile-art-batch-4_411
     21300824: hyptosis_tile-art-batch-4_412
+    21300826: hyptosis_tile-art-batch-4_142
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -2702,7 +2703,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: hyptosis_tile-art-batch-4_172
+      name: 1haarniska2
       rect:
         serializedVersion: 2
         x: 96
@@ -2728,7 +2729,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: hyptosis_tile-art-batch-4_174
+      name: 1miekat
       rect:
         serializedVersion: 2
         x: 160
@@ -2741,7 +2742,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: hyptosis_tile-art-batch-4_175
+      name: 1miekka
       rect:
         serializedVersion: 2
         x: 192
@@ -2780,12 +2781,12 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: hyptosis_tile-art-batch-4_178
+      name: 1miekka2
       rect:
         serializedVersion: 2
         x: 288
         y: 512
-        width: 32
+        width: 64
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -2806,13 +2807,13 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: hyptosis_tile-art-batch-4_180
+      name: 1reuna2
       rect:
         serializedVersion: 2
         x: 352
-        y: 512
+        y: 475
         width: 32
-        height: 32
+        height: 69
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2832,13 +2833,13 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: hyptosis_tile-art-batch-4_182
+      name: 1reuna
       rect:
         serializedVersion: 2
         x: 416
-        y: 512
-        width: 32
-        height: 32
+        y: 463
+        width: 96
+        height: 81
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2949,13 +2950,13 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: hyptosis_tile-art-batch-4_191
+      name: 1haarniska
       rect:
         serializedVersion: 2
         x: 224
         y: 480
         width: 32
-        height: 32
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3001,13 +3002,13 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: hyptosis_tile-art-batch-4_195
+      name: 1reuna3
       rect:
         serializedVersion: 2
         x: 352
         y: 480
         width: 32
-        height: 32
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3430,10 +3431,10 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: hyptosis_tile-art-batch-4_228
+      name: 1putki
       rect:
         serializedVersion: 2
-        x: 448
+        x: 461
         y: 416
         width: 32
         height: 32
@@ -4756,7 +4757,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: hyptosis_tile-art-batch-4_330
+      name: 1miekka3
       rect:
         serializedVersion: 2
         x: 448
@@ -4769,13 +4770,13 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: hyptosis_tile-art-batch-4_331
+      name: 1haarniska3
       rect:
         serializedVersion: 2
         x: 480
-        y: 224
-        width: 32
-        height: 32
+        y: 192
+        width: 33
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5289,13 +5290,13 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: hyptosis_tile-art-batch-4_371
+      name: 1smelt
       rect:
         serializedVersion: 2
         x: 384
-        y: 96
-        width: 32
-        height: 32
+        y: 63
+        width: 63
+        height: 65
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5575,7 +5576,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: hyptosis_tile-art-batch-4_393
+      name: 1kori
       rect:
         serializedVersion: 2
         x: 384
@@ -5588,7 +5589,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: hyptosis_tile-art-batch-4_394
+      name: 1kori2
       rect:
         serializedVersion: 2
         x: 416
@@ -5829,6 +5830,19 @@ TextureImporter:
         y: 0
         width: 32
         height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hyptosis_tile-art-batch-4_142
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 629
+        width: 102
+        height: 5
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
