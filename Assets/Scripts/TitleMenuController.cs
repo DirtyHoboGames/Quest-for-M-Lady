@@ -16,6 +16,9 @@ namespace Assets.Scripts {
         private GameObject AboutToggle;
         private GameObject HelpToggle;
 
+        public AudioClip choice;
+        public AudioClip start;
+
         void Start() {
 
 			Destroy (GameObject.Find("GameController"));
@@ -35,7 +38,7 @@ namespace Assets.Scripts {
             ImageToggle = GameObject.Find("ImageToggle");
             HelpToggle = GameObject.Find("HelpToggle");
 
-            continueButton.onClick.AddListener(() => startGame());
+            continueButton.onClick.AddListener(() => startSound());
 
             PlayButton.onClick.AddListener(() => beginGame());
             AboutButton.onClick.AddListener(() => toggleAbout());
@@ -52,6 +55,9 @@ namespace Assets.Scripts {
         //Shows the "How to play" text, disactivates Play, How to play, About and Quit buttons, activates Continue button and pauses the music. Pressing Continue starts the game
 
         void beginGame() {
+            //SoundManager.instance.musicSource.Stop();
+            SoundManager.instance.musicSource.PlayOneShot(choice, 1.0f);
+
             continueButton.gameObject.SetActive(true);
             PlayButton.gameObject.SetActive(false);
             AboutButton.gameObject.SetActive(false);
@@ -60,12 +66,18 @@ namespace Assets.Scripts {
             QuitButton.gameObject.SetActive(false);
             ImageToggle.SetActive(false);
             HelpToggle.SetActive(true);
-            SoundManager.instance.musicSource.Pause();
+            AboutToggle.SetActive(false);
 
         }
 
+        void startSound() {
+            SoundManager.instance.musicSource.Stop();
+            SoundManager.instance.musicSource.PlayOneShot(start, 1.0f);
+            Invoke("startGame", 1);
+        }
+
         void startGame() {
-         
+
             int currentScene = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene(currentScene + 1);
 
@@ -76,6 +88,9 @@ namespace Assets.Scripts {
 
             if(AboutToggle.activeSelf == true) {
 
+                SoundManager.instance.musicSource.PlayOneShot(choice, 1.0f);
+
+                HelpToggle.SetActive(false);
                 ImageToggle.SetActive(true);
                 AboutToggle.SetActive(false);
                 continueButton.gameObject.SetActive(false);
@@ -83,6 +98,9 @@ namespace Assets.Scripts {
 
             } else {
 
+                SoundManager.instance.musicSource.PlayOneShot(choice, 1.0f);
+
+                HelpToggle.SetActive(false);
                 ImageToggle.SetActive(false);
                 AboutToggle.SetActive(true);
                 continueButton.gameObject.SetActive(false);
@@ -96,12 +114,18 @@ namespace Assets.Scripts {
 
             if (HelpToggle.activeSelf == true) {
 
+                SoundManager.instance.musicSource.PlayOneShot(choice, 1.0f);
+
+                AboutToggle.SetActive(false);
                 ImageToggle.SetActive(true);
                 HelpToggle.SetActive(false);
 
 
             } else {
 
+                SoundManager.instance.musicSource.PlayOneShot(choice, 1.0f);
+
+                AboutToggle.SetActive(false);
                 ImageToggle.SetActive(false);
                 HelpToggle.SetActive(true);
 

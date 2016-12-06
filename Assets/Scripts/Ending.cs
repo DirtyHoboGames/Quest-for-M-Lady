@@ -54,6 +54,9 @@ public class Ending : MonoBehaviour {
 		private Text Doggos;
 		private Text HoboCoins;
 
+        public AudioClip goodEnding;
+        public AudioClip badEnding;
+
 		//Assings the class variables to the correct gameobjects at the start of the scene
 		void Start() {
 
@@ -229,6 +232,10 @@ public class Ending : MonoBehaviour {
 
 				disableAllWindows ();
 
+                    SoundManager.instance.musicSource.Stop();
+
+                    SoundManager.instance.musicSource.PlayOneShot(goodEnding, 1.0f);
+
                     GoodEnding.SetActive(true);
 
                     Invoke("displayStats", 10);
@@ -238,6 +245,10 @@ public class Ending : MonoBehaviour {
 			case 6:
 
 				disableAllWindows ();
+
+                    SoundManager.instance.musicSource.Stop();
+
+                    SoundManager.instance.musicSource.PlayOneShot(badEnding, 1.0f);
 
                     BadEnding.SetActive(true);
 

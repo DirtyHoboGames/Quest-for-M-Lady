@@ -20,6 +20,9 @@ namespace Assets.Scripts {
         private Text dialog;
 
         public AudioClip doggo;
+        public AudioClip yellowKnight;
+        public AudioClip blueKnight;
+        public AudioClip bloodyKnight;
 
 		//These objects show if you press Enter near the Yellow Knight
 		private GameObject YellowKnightToggle;
@@ -105,7 +108,9 @@ namespace Assets.Scripts {
 
 			} else if (colli.CompareTag ("YellowKnight") == true) {
 
-				if (YellowKnightToggle.activeSelf == false) {
+                if (YellowKnightToggle.activeSelf == false) {
+
+                    SoundManager.instance.musicSource.PlayOneShot(yellowKnight, 1.0f);
 
                     toggleFathers();
 					
@@ -117,6 +122,8 @@ namespace Assets.Scripts {
 
 				if (BlueKnightToggle.activeSelf == false) {
 
+                    SoundManager.instance.musicSource.PlayOneShot(blueKnight, 1.0f);
+
                     toggleFathers();
 					
 					BlueKnightToggle.SetActive (true);
@@ -126,6 +133,8 @@ namespace Assets.Scripts {
 			} else if (colli.CompareTag ("BloodyKnight") == true) {
 				
 				if (BloodyKnightToggle.activeSelf == false) {
+
+                    SoundManager.instance.musicSource.PlayOneShot(bloodyKnight, 1.0f);
 
                     toggleFathers();
 					
