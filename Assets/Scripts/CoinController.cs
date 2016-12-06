@@ -13,9 +13,7 @@ namespace Assets.Scripts {
 			
 			if (colli.CompareTag ("Playa")) {
 
-                //SoundManager.instance.PlaySingle(coin);
                 SoundManager.instance.musicSource.PlayOneShot(coin, 0.5f);
-                //SoundManager.instance.PlaySingle(coin);
 
                 DestroyObject(this.gameObject);
 

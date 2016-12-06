@@ -12,6 +12,7 @@ public class GuardLineOfSight : MonoBehaviour { //Script for guards to detect pl
 	private bool spotted;
 	private Vector3 entrance = new Vector3(-16.10f, -5.782f, -0.355f);
 	private GameObject player;
+    public AudioClip guard;
 
     void Start() {
 
@@ -22,6 +23,7 @@ public class GuardLineOfSight : MonoBehaviour { //Script for guards to detect pl
     void OnTriggerEnter2D(Collider2D coll) { //guard collider checks for player and deals damage, says some stuff, invokes checkstatus method.
         if (coll.CompareTag("Playa")) {
             //StatKeeper.receiveDamage(4);
+            SoundManager.instance.musicSource.PlayOneShot(guard, 1.0f);
             dialog.text = DialogScript.getDialog(14);
             spotted = true;
         }

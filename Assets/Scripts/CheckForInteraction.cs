@@ -19,6 +19,8 @@ namespace Assets.Scripts {
 
         private Text dialog;
 
+        public AudioClip doggo;
+
 		//These objects show if you press Enter near the Yellow Knight
 		private GameObject YellowKnightToggle;
 		private Button YellowNo;
@@ -78,7 +80,9 @@ namespace Assets.Scripts {
 
 			if (colli.CompareTag ("Doggo")) {
 
-				dialog.text = DialogScript.getDialog (int.Parse (colli.gameObject.name));
+                SoundManager.instance.musicSource.PlayOneShot(doggo, 1.0f);
+
+                dialog.text = DialogScript.getDialog (int.Parse (colli.gameObject.name));
 
 				StatKeeper.DoggoDiscovered (int.Parse(colli.gameObject.name));
 
