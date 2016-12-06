@@ -90,6 +90,12 @@ namespace Assets.Scripts {
 
 				markAsFound (doggonumber);
 
+				if (doggonumber == 22) {
+
+					StatKeeper.collectHoboCoin ();
+
+				}
+
 				discoveredDoggos++;
 
 				Debug.Log ("Doggos found: " + discoveredDoggos);
