@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 public class CityGuard : MonoBehaviour {
     private Text dialog;
     private bool spotted;
-    private Vector3 entrance = new Vector3(-91.717f, 3.131f, 0f);   //warp-back location
+    private Vector3 entrance = new Vector3(-91.719f, 3.223f, 0f);   //warp-back location
     private GameObject player;
 
     void Start() {
