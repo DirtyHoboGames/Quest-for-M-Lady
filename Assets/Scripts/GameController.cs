@@ -33,6 +33,7 @@ namespace Assets.Scripts {
         private GameObject DialogToggle;
         private GameObject Menu;
 		private GameObject StoryWindow;
+		private GameObject StoryWindowPrequel;
 
 		//These objects are in the ''Game Over'' screen
 		private GameObject GameOver;
@@ -96,6 +97,14 @@ namespace Assets.Scripts {
                 StoryWindow = GameObject.Find ("StoryWindow");
 				hideStoryWindow = GameObject.Find ("StoryWindow/ContinueButton").GetComponent<Button> ();
 
+				//Activates another story window that display for a set amount of time
+				if (SceneManager.GetActiveScene ().name.Equals ("Childhood room 1") || SceneManager.GetActiveScene().name.Equals("Sleeping Chambers")) {
+
+					StoryWindowPrequel = GameObject.Find ("StoryWindowPrequel");
+
+					showPrequel ();
+				
+				}
 
 				hideStoryWindow.onClick.AddListener (() => hideStory ());
 			}
@@ -107,7 +116,8 @@ namespace Assets.Scripts {
             mapButton.onClick.AddListener(() => toggleMap());                                                   // Calls a method on mouse click/touch input to hide/show minimap of the current scene
             bagButton.onClick.AddListener(() => toggleInventory());                                             // Calls a toggleInventory method to hide/show player's inventory
             enterButton.onClick.AddListener(() => searchInteraction());
-            menuButton.onClick.AddListener(() => toggleMenu());
+            
+			menuButton.onClick.AddListener(() => toggleMenu());
             menuPlayButton.onClick.AddListener(() => resumeGame());
 			menuQuitButton.onClick.AddListener(() => quitGame());                //When you click "Quit to menu" button on the pause menu it returns you to the Title Menu
 
@@ -118,6 +128,7 @@ namespace Assets.Scripts {
             preventUIOverlap();
 
             cancelInteracting();
+
 
         }
 
@@ -160,6 +171,20 @@ namespace Assets.Scripts {
 				}
 
 			}
+		}
+
+		//Shows the prequel story window for 5 seconds, then invokes the hidePrequel method
+		private void showPrequel() {
+		
+			Invoke ("hidePrequel", 5);
+		
+		}
+
+		//Hides the story window
+		private void hidePrequel() {
+
+			StoryWindowPrequel.SetActive (false);
+
 		}
 
 		//Unfreezes the time and returns the player to main menu
@@ -221,6 +246,8 @@ namespace Assets.Scripts {
             Debug.Log("Menu toggle");
             preventUIOverlap();
 
+			DialogToggle.SetActive (false);
+
             if (Menu.activeSelf == true) {
 
                 Menu.SetActive(false);
@@ -238,6 +265,7 @@ namespace Assets.Scripts {
         private void resumeGame() {
 
             Time.timeScale = 1f;
+			DialogToggle.SetActive (true);
             preventUIOverlap();
 
         }

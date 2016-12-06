@@ -17,11 +17,10 @@ namespace Assets.Scripts {
                 SoundManager.instance.musicSource.PlayOneShot(coin, 0.5f);
                 //SoundManager.instance.PlaySingle(coin);
 
-                Debug.Log("moi");
-
                 DestroyObject(this.gameObject);
 
 				StatKeeper.collectHoboCoin ();
+
 			}
         }
 	}

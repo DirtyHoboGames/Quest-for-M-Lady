@@ -68,8 +68,8 @@ namespace Assets.Scripts {
 				BloodyYes.onClick.AddListener (() => FatherSelected ("Bloody"));
 				BloodyNo.onClick.AddListener (() => resumeGame ());
 
-				toggleFathers ();
 
+					toggleFathers ();
 			}
 
         }
@@ -129,8 +129,8 @@ namespace Assets.Scripts {
 				}
 
 			} else {
-
-                toggleFathers();
+				
+					toggleFathers ();
 
 				dialog.text = DialogScript.getNullDialog ();
 
@@ -154,6 +154,7 @@ namespace Assets.Scripts {
 			}
 		}
 
+		//When the player selects the father, this method sets the correct father into the StatKeeper 
 		void FatherSelected(string father) {
 
 			if (father.Equals ("Yellow")) {
@@ -194,7 +195,8 @@ namespace Assets.Scripts {
 
 				}
 			}
-
+			
+			//Prevents overlapping of the UI layers
 			void toggleFathers() {
 			
 				if(YellowKnightToggle.activeSelf == true) {
