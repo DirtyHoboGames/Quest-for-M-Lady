@@ -36,6 +36,7 @@ public class Ending : MonoBehaviour {
 		private Button EnterCastleContinue;
 
 		private GameObject MladyIntro;
+		private GameObject GiveRose;
 		private Button GiveRoseButton;
 		private Button NoButton;
 
@@ -83,7 +84,8 @@ public class Ending : MonoBehaviour {
 			EnterCastleContinue = GameObject.Find ("EnterCastle/ContinueButton").GetComponent<Button> ();
 
 			MladyIntro = GameObject.Find("MladyIntro");
-			GiveRoseButton = GameObject.Find("GiveRoseButton").GetComponent<Button>();
+			GiveRose = GameObject.Find ("GiveRose");
+			GiveRoseButton = GameObject.Find("GiveRose/GiveRoseButton").GetComponent<Button>();
 			NoButton = GameObject.Find("NoButton").GetComponent<Button>();
 
 			MladyGood = GameObject.Find("MladyGood");
@@ -198,9 +200,9 @@ public class Ending : MonoBehaviour {
 				disableAllWindows ();
 
 				if (InventoryHandler.roseAlreadyUsed ()) {
-				
+					
 					GiveRoseButton.enabled = false;
-				
+					GiveRose.SetActive (false);
 				}
 
 				MladyIntro.SetActive (true);
