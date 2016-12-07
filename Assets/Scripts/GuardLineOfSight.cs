@@ -38,7 +38,7 @@ public class GuardLineOfSight : MonoBehaviour { //Script for guards to detect pl
     }
 
     void CheckStatus() {    //method for damaging player and teleport.
-        if (StatKeeper.getHealth() >=5) {
+        if (StatKeeper.getHealth() >=0) {
             StatKeeper.receiveDamage (4);
 
 

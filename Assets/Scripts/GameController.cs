@@ -159,9 +159,6 @@ namespace Assets.Scripts {
 
 						playerDed = true;
 
-						StatKeeper.healPlayer();
-
-
 					}
 
 				}
@@ -200,9 +197,9 @@ namespace Assets.Scripts {
 
         //Continues the game and revives the player
         public void ContinueGame() {
-
-			StatKeeper.healPlayer();
-
+            playerDed = false;
+            StatKeeper.healPlayer();
+            
             Debug.Log("Continuing game from the checkpoint");
 
 			StatKeeper.resetHoboCoin ();
