@@ -13,7 +13,6 @@ public class InventoryHandler : MonoBehaviour {
         private static int potionAmount = 3;
 
         private Button ButtonPotion;
-        private Button ButtonRose;
 
         private GameObject Potion;
         private GameObject Rose;
@@ -26,13 +25,11 @@ public class InventoryHandler : MonoBehaviour {
         potionText = GameObject.Find("ItemPotion/Text").GetComponent<Text>();
 
         ButtonPotion = GameObject.Find("ItemPotion/ButtonPotion").GetComponent<Button>();
-        ButtonRose = GameObject.Find("ItemRose/ButtonRose").GetComponent<Button>();
 
         Potion = GameObject.FindGameObjectWithTag("Potion");
         Rose = GameObject.FindGameObjectWithTag("Rose");
 
         ButtonPotion.onClick.AddListener(() => usePotion());
-        ButtonRose.onClick.AddListener(() => useRose());
 
             OnLevelWasLoaded(SceneManager.GetActiveScene().buildIndex);
 
@@ -41,6 +38,7 @@ public class InventoryHandler : MonoBehaviour {
         }
 
         void Update() {
+
             if (roseUsed == true) {
                 useRose();
             }

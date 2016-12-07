@@ -272,7 +272,7 @@ public class Ending : MonoBehaviour {
 			disableAllWindows ();
 			StatsWindow.SetActive (true);
 			Doggos.text = StatKeeper.getDoggos() + " / 6";
-			HoboCoins.text = StatKeeper.getHobos() + " / ???";
+			HoboCoins.text = StatKeeper.getHobos() + " / 40";
 
 		}
 

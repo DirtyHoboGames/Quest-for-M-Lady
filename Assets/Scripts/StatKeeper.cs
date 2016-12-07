@@ -41,7 +41,7 @@ namespace Assets.Scripts {
 			doggos.Add (22, false);
 			doggos.Add (23, false);
 		
-		}
+			}
 
 		/// <summary>
 		/// Sets the stats.
