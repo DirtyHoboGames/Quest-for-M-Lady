@@ -22,7 +22,7 @@ namespace Assets.Scripts {
             dialogs.Add("Doth not disturb me");
 
             //Random creepy kid 5
-            dialogs.Add("Alas off thee dim-witt'd coyote !");
+            dialogs.Add("Random kid \r\n    Alas off thee dim-witt'd coyote !");
 
             //Wench 6-7
             dialogs.Add("Wench: \r\n   Oh? sweet rose.i'll alloweth to slideth.");
