@@ -73,7 +73,7 @@ namespace Assets.Scripts {
         void startSound() {
             SoundManager.instance.musicSource.Stop();
             SoundManager.instance.musicSource.PlayOneShot(start, 1.0f);
-            Invoke("startGame", 1);
+            Invoke("startGame", 2);
         }
 
         void startGame() {
