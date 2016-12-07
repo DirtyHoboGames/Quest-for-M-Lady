@@ -98,7 +98,7 @@ namespace Assets.Scripts {
 				hideStoryWindow = GameObject.Find ("StoryWindow/ContinueButton").GetComponent<Button> ();
 
 				//Activates another story window that display for a set amount of time
-				if (SceneManager.GetActiveScene ().name.Equals ("Childhood room 1") || SceneManager.GetActiveScene().name.Equals("Sleeping Chambers")) {
+				if (SceneManager.GetActiveScene ().name.Equals ("Childhood room 1") || SceneManager.GetActiveScene().name.Equals("Sleeping Chambers") || SceneManager.GetActiveScene().name.Equals("Forest")) {
 
 					StoryWindowPrequel = GameObject.Find ("StoryWindowPrequel");
 
