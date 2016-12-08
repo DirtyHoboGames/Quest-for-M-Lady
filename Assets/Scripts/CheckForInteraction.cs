@@ -44,6 +44,7 @@ namespace Assets.Scripts {
 		void Awake() {
 
 
+
             dialog = GameObject.Find("ShowDialog/DialogBox").GetComponent<Text>();
             
 
@@ -73,8 +74,11 @@ namespace Assets.Scripts {
 				BloodyYes.onClick.AddListener (() => FatherSelected ("Bloody"));
 				BloodyNo.onClick.AddListener (() => resumeGame ());
 
+                YellowKnightToggle.SetActive(false);
+                BlueKnightToggle.SetActive(false);
+                BloodyKnightToggle.SetActive(false);
 
-					toggleFathers ();
+                toggleFathers ();
 			}
 
         }
@@ -150,7 +154,7 @@ namespace Assets.Scripts {
 			}
 				
         }
-
+       
 		//resumes the game when the player doesn't want this father
 		void resumeGame() {
 
