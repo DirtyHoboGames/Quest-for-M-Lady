@@ -147,41 +147,7 @@ public class Ending : MonoBehaviour {
 		
 		}
 
-		//Continues the story onward
-		/* private void continueStory(int window) {
-
-			if (window == 1) {
-
-				disableAllWindows ();
-
-				EnterCastle.SetActive (true);
-			}
-
-			if (window == 2) {
-			
-				disableAllWindows ();
-			
-				MladyIntro.SetActive (true);
-
-			}
-
-			if (window == 3) {
-			
-				disableAllWindows ();
-
-				MladyGood.SetActive (true);
-			
-			}
-
-			if (window == 4) {
-			
-				disableAllWindows ();
-
-				MladyBad.SetActive (true);
-			
-			}
-
-		} */
+		
 
 		//Continues the story onward based on players choices
 		private void continueStory(int window) {

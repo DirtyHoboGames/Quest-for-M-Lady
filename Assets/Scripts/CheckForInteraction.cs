@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 
 // When player presses the enter button, it checks if there are any interactable NPC's  near the player
 //If there is, it gets the dialog from the dialog script according to the NPC index 
-//It also includes functionality for finding hidden hobocoins in the walls, crates etc..
 //Also controls the childhood scene's father selection.
 using System;
 
@@ -99,14 +98,7 @@ namespace Assets.Scripts {
 
 				dialog.text = DialogScript.getDialog (int.Parse (colli.gameObject.name));
 
-
-			} else if (colli.CompareTag ("HiddenHoboCoin") == true) {
-
-				Debug.Log ("Oh look, a HoboCoin !");
-
-				StatKeeper.collectHoboCoin ();
-
-			} else if (colli.CompareTag ("HostileNPC") == true) {
+            } else if (colli.CompareTag ("HostileNPC") == true) {
 
 				StatKeeper.receiveDamage (2);
 
