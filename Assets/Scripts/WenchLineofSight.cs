@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using Assets;
 using Assets.Scripts;
 using UnityEngine.SceneManagement;
-
+    
+    //Script for wench. If wench sees the player it asks for rose. If not given, player takes damage and teleports back to the stairs.
 public class WenchLineofSight : MonoBehaviour {
     private Text dialog;
     private GameObject WenchStoryWindow;
@@ -22,6 +23,8 @@ public class WenchLineofSight : MonoBehaviour {
 	//This represents the player
 	private GameObject player;
     
+
+    //Finds all buttons and objects.
     void Start() {
 		
         WenchStoryWindow = GameObject.Find("WenchStoryWindow");
@@ -39,13 +42,18 @@ public class WenchLineofSight : MonoBehaviour {
 		player = GameObject.Find ("Player");
 
     }
-
+        /// <summary>
+        /// Wench can turn. 
+        /// </summary>
     void Update() {
         if(coRoutineStarted) {
             coRoutineStarted = false;
 			StartCoroutine (flipWench ());
         }
 	}
+        /// <summary>
+        /// If rose is given, it will be removed from inventory and wench will no longer attack the player if seen.
+        /// </summary>
     void YesButtonClicked() {
         hideStory();
         InventoryHandler.GiveRose();
@@ -57,6 +65,11 @@ public class WenchLineofSight : MonoBehaviour {
 
 
     }
+
+    /// <summary>
+    /// changes the direction the wench looks at. 
+    /// </summary>
+    /// <returns></returns>
     IEnumerator flipWench() {
 
 		wenchFlip (1);
@@ -66,6 +79,9 @@ public class WenchLineofSight : MonoBehaviour {
         coRoutineStarted = true;
     }
 
+    /// <summary>
+    /// Damages player, teleports player.
+    /// </summary>
     void NoButtonClicked() {
         hideStory();
         StatKeeper.receiveDamage(6);
